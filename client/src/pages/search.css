@@ -1,0 +1,20 @@
+.movie-card-container{
+    display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  cursor: pointer;
+  justify-content: center;
+}
+no-movies {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.5rem;
+    color: #555;
+}
+.error-message{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.5rem;
+    color:darkred;
+}
