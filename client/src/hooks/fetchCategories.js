@@ -1,5 +1,5 @@
 const API_KEY = process.env.REACT_APP_TMDB_KEY;
-const BASE_URL = "https://api.themoviedb.org/3";
+const BASE_URL = process.env.REACT_APP_API_URL;
 export async function fetchCategories() {
   const res = await fetch(
     `${BASE_URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`

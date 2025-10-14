@@ -5,7 +5,7 @@ import NavBar from "../components/NavBar.jsx";
 import './Moviedetail.css';
 import '../components/spinner.css';
 const API_KEY = process.env.REACT_APP_TMDB_KEY;
-const BASE_URL = "https://api.themoviedb.org/3";
+const BASE_URL = process.env.REACT_APP_API_URL;
 const IMAGE_BASE = "https://image.tmdb.org/t/p/original";
 
 

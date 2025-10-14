@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 const API_KEY = process.env.REACT_APP_TMDB_KEY;
-const BASE_URL = "https://api.themoviedb.org/3";
+const BASE_URL = process.env.REACT_APP_API_URL;
 export default function useFetchMovies(category) {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
