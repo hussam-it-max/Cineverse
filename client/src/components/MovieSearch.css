@@ -2,8 +2,8 @@
 /* Wrapper */
 .search-wrapper {
   position: relative;
-  width: 300px;
-  margin: 20px auto;
+  width: 600px;
+  margin: 40px auto;
 }
 
 /* Input */
@@ -80,6 +80,10 @@
   .movie-t {
     font-size: 13px;
   }
+  .search-wrapper{
+    width: 300px;
+    margin: 40px auto;
+}
 }
 .movie-photo {
   width: 50px;

@@ -1,6 +1,6 @@
 import { useNavigate,useParams } from "react-router-dom"
-import { useEffect,useState,useContext } from "react"
-import { UserContext } from "../Context/UserContext.js" 
+import { useEffect,useState } from "react"
+ 
 import NavBar from "../components/NavBar.jsx";
 import './Moviedetail.css';
 import '../components/spinner.css';
@@ -10,8 +10,7 @@ const IMAGE_BASE = "https://image.tmdb.org/t/p/original";
 
 
 export default function MovieDetail(){
-    const {selectedMovie}=useContext(UserContext);
-    const [movie,setMovie]=useState(selectedMovie);
+    const [movie,setMovie]=useState(null);
     const [credits,setCredits]=useState(null);
     const [trailer,setTrailer]=useState(null);
     const [castMessage,setCastMessage]=useState("");
@@ -24,12 +23,11 @@ export default function MovieDetail(){
     useEffect(()=>{
         (async function fetchExtraDetails(){
             try{
-                if (!movie) {
           const res = await fetch(`${BASE_URL}/movie/${id}?api_key=${API_KEY}`);
           if (!res.ok) throw new Error("Cannot fetch movie details");
           const data = await res.json();
           setMovie(data);
-        }
+      
                 const [creditsRes,videoRes]=await Promise.all([
                     fetch(`${BASE_URL}/movie/${id}/credits?api_key=${API_KEY}`),
                     fetch(`${BASE_URL}/movie/${id}/videos?api_key=${API_KEY}`)

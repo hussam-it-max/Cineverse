@@ -25,6 +25,12 @@
   background-color: #ff4c4c;
   transform: scale(1.05);
 }
+.category-button.active {
+  background-color: #ff4c4c;
+  color: white;
+  border: 1px solid #ff4c4c;
+  transform: scale(1.05);
+}
 
 /* --- RESPONSIVE STYLES --- */
 

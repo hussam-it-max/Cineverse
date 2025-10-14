@@ -24,11 +24,14 @@ export default function useFetchMovies(category) {
         }
         const data = await response.json();
         setMovies((prevMovies) => {
-          // filter duplicates using movie ID
-          const newMovies = data.results.filter(
-            (m) => !prevMovies.some((p) => p.id === m.id)
-          );
-          return [...prevMovies, ...newMovies];
+          if (page === 1) return data.results;
+          else {
+            // filter duplicates using movie ID
+            const newMovies = data.results.filter(
+              (m) => !prevMovies.some((p) => p.id === m.id)
+            );
+            return [...prevMovies, ...newMovies];
+          }
         });
       } catch (err) {
         setError(err.message);

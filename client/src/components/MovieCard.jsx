@@ -5,12 +5,10 @@ import { UserContext } from '../Context/UserContext.js';
 import FavoriteButton from './Heart';
 const IMAGE_BASE = "https://image.tmdb.org/t/p/original";
 export default function MovieCard({movie}){
-    const {setSelectedMovie} = useContext(UserContext);
     const stars = Math.round(movie.vote_average / 2);
     const navigate = useNavigate();
 
     const handleClick = () => {
-        setSelectedMovie(movie);
         navigate(`/movie/${movie.id}`);
     };
 

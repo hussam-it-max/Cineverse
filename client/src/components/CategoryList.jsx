@@ -6,6 +6,11 @@ import {fetchCategories} from '../hooks/fetchCategories.js'
     const [categories,setCategories]=useState([]);
     const [loading,setLoading]=useState(true);
     const [error,setError]=useState(null);
+    const [activeCategory,setActiveCategory]=useState(null);
+    function handleClick(id){
+        setActiveCategory(id);
+        onSelectCategory(id);
+    }
     useEffect(()=>{
         setLoading(true);
         setError(null);
@@ -22,7 +27,7 @@ import {fetchCategories} from '../hooks/fetchCategories.js'
     return(
         <div className="categories">
             {categories.map(category=>(
-                <button className='category-button' key={category.id} onClick={()=>(onSelectCategory(category.id))}>{category.name}</button>
+                <button className={`category-button ${category.id === activeCategory ? 'active' : ''}`} key={category.id} onClick={()=>(handleClick(category.id))}>{category.name}</button>
             ))}
 
         </div>

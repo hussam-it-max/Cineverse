@@ -7,7 +7,6 @@ export function UserProvider({ children }) {
   const [user, setUser] = useState(null);
   const [favorites, setFavorites] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [selectedMovie, setSelectedMovie] = useState(null);
   useEffect(() => {
     const token = localStorage.getItem("token");
     const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -126,8 +125,6 @@ export function UserProvider({ children }) {
         removeFavorite,
         fetchFavorites,
         register,
-        selectedMovie,
-        setSelectedMovie,
       }}
     >
       {children}
