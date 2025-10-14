@@ -1,11 +1,9 @@
 import './NavBar.css';
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { UserContext } from '../Context/UserContext.js';
 
 export default function NavBar() {
-  const navigate = useNavigate();
   const { user, logout } = useContext(UserContext);
   const [menuOpen, setMenuOpen] = useState(false);
 

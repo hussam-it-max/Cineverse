@@ -149,7 +149,7 @@ export default function MovieDetail(){
     {trailerMessage && <p className="error-notification">{trailerMessage}</p>}
 {!trailerMessage && (
   <div className="trailer">
-        <iframe src={`https://www.youtube.com/embed/${trailer.key}`} frameBorder="0" allowFullScreen>
+        <iframe src={`https://www.youtube.com/embed/${trailer.key}`}  allowFullScreen>
         </iframe>
         </div>
 )}

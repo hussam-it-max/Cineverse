@@ -1,7 +1,5 @@
 import './movies.css';
 import { useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
-import { UserContext } from '../Context/UserContext.js';
 import FavoriteButton from './Heart';
 const IMAGE_BASE = "https://image.tmdb.org/t/p/original";
 export default function MovieCard({movie}){

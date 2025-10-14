@@ -8,7 +8,7 @@ export default function MovieSearch() {
   const [loading, setLoading] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
   const navigate = useNavigate();
-  const BASE_URL = "https://api.themoviedb.org/3";
+  const BASE_URL = process.env.REACT_APP_API_URL;
   const API_KEY = process.env.REACT_APP_TMDB_KEY;
   const wrapperRef = useRef(null);
 
@@ -36,7 +36,7 @@ export default function MovieSearch() {
     }, 300); // debounce 300ms
 
     return () => clearTimeout(delayDebounce);
-  }, [query]);
+  }, [query, BASE_URL, API_KEY]);
 
   // Close dropdown when clicking outside
   useEffect(() => {
